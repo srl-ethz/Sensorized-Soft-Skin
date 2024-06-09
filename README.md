@@ -20,7 +20,7 @@
     </a>
   </div>
   <div style="margin: 0 10px;">
-    <a href="..." style="text-decoration: none; color: black; display: block;">
+    <a href="(skin-molds/)" style="text-decoration: none; color: black; display: block;">
       <img src="https://github.com/srl-ethz/Sensorized-Soft-Skin/assets/152282116/d4be38ed-15e6-48f2-9fff-491136aaec64" alt="Designs" width="50" height="50">
       <br>
       Designs
@@ -168,7 +168,7 @@ Supplementing robotic hands with tactile intelligence embedded between robot and
 
 
 ## ${{\color{RoyalBlue}{\textsf{Open Source\}}}}\$
-We open source the stl-files for the molds [here](....).
+We open source the stl- and 3mf-files for the [skin molds](skin-molds/) on Github.
 
 ## ${{\color{RoyalBlue}{\textsf{Aknowledgements\}}}}\$
 We are grateful for the ETH Zurich RobotX Research program funding and the SNSF Project grant \#200021\_215489.
