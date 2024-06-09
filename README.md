@@ -20,7 +20,7 @@
     </a>
   </div>
   <div style="margin: 0 10px;">
-    <a href="/Sensorized-Soft-Skin/skin-molds/)" style="text-decoration: none; color: black; display: block;">
+    <a href="skin molds" style="text-decoration: none; color: black; display: block;">
       <img src="https://github.com/srl-ethz/Sensorized-Soft-Skin/assets/152282116/d4be38ed-15e6-48f2-9fff-491136aaec64" alt="Designs" width="50" height="50">
       <br>
       Designs
