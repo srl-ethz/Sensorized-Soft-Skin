@@ -1,5 +1,5 @@
-# Sensorized Soft Skin for Dexterous Robotic Hands
-Jana Egli, Benedek Forrai, Thomas Buchner, Jiangtao Su, Xiaodong Chen, and Robert K. Katzschmann
+# <h align="center">${{\color{CornflowerBlue}\Huge{\textsf{Sensorized Soft Skin for Dexterous Robotic Hands\}}}}\$</h>
+<h1 align="center">Jana Egli, Benedek Forrai, Thomas Buchner, Jiangtao Su, Xiaodong Chen, and Robert K. Katzschmann</h1>
 
 <br>
 <br>
@@ -36,11 +36,11 @@ Jana Egli, Benedek Forrai, Thomas Buchner, Jiangtao Su, Xiaodong Chen, and Rober
 <p align="center"><img src="https://github.com/srl-ethz/Sensorized-Soft-Skin/assets/152282116/9cef6b80-1b60-4963-b1dc-2b4f700002b8" /></p>
 
 
-## Abstract
+## ${{\color{RoyalBlue}{\textsf{Abstract\}}}}\$
 Conventional industrial robots often use two-fingered grippers or suction cups to manipulate objects or interact with the world. Because of their simplified design, they are unable to reproduce the dexterity of human hands when manipulating a wide range of objects. While the control of humanoid hands evolved greatly, hardware platforms still lack capabilities, particularly in tactile sensing and providing soft contact surfaces. In this work, we present a method that equips the skeleton of a tendon-driven humanoid hand with a soft and sensorized tactile skin. Multi-material 3D printing allows us to iteratively approach a cast skin design which preserves the robot’s dexterity in terms of range of motion and speed. We demonstrate that a soft skin enables firmer grasps and piezoresistive sensor integration enhances the hand’s tactile sensing capabilities.
 
-## Methods
-### Design
+## ${{\color{RoyalBlue}{\textsf{Methods\}}}}\$
+### ${{\color{RoyalBlue}{\textsf{Design\}}}}\$
 We designed a 1mm thick skin around the Faive robotic hand in a CAD software. Besides a full-hand skin, we did separate designs for finger and palm. Previous work reported an ideal skin thickness of 1mm to trade deformation and fabrication limits. The index and ring finger were identical. A hexagonal origami skin spanned the finger joints. Soft origami gripper have already shown to be able to grasp objects of irregular shape. Their compliance helps in folding around items.
 
 Our Metacarpophalangeal joints (MCP) had a circular symmetric hexagonal base. The profile of the base was rotated by 30 degrees from one origami plane to the next. The MCP joints consisted of six stacked origamis for the Index, Middle, Ring and Pinky finger. The Proximal Interphalangeal (PIP) and Distal Interphalangeal (DIP) joints were hexagonal and symmetric only with respect to the sagittal plane. The skins of these two joint types consisted of four stacked origamis. The Carpometacarpal (CMC) joint of the thumb was hexagonal and circular symmetric with eight stacked origamis. The thumb's MCP joint skin was a sagittal plane symmetric stack of four origamis. The PIP joint of the thumb was also symmetric w.r.t the sagittal plane and designed as a stack of four origamis. 
@@ -49,7 +49,7 @@ Adjacent joints were connected by skin, surrounding the phalangeals. For the fou
 We designed the palm skin as a smoothly shaped cover of the skeleton.
 <p align="center"><img width="400" src="https://github.com/srl-ethz/Sensorized-Soft-Skin/assets/152282116/29412292-94f3-4158-88f7-a1d4d169116a" /></p>
 
-## Fabrication
+### ${{\color{RoyalBlue}{\textsf{Fabrication\}}}}\$
 We did the prototyping using a multi-material 3D-Printer. The skin made of custom made SEBS with shore hardness 18A and AquaSys120 (Infinite Material Solutions Inc.) as support structure. The water-soluble support allowed us to remove it from the skin without tearing the soft structure. The drawback of 3D-Printing with multi-material printers is, that it's slow compared to conventional 3D printer because of the time consumed for switching the print-heads and for heating up the materials to their extrusion temperature for each layer. Printing soft materials is not as reliable as casting in terms of structure integrity. Printed layers tended to separate and printing resolution is limited by the nozzle size and expansion of the soft material after leaving the nozzle. This limitations challenged the printability of origami structures.
 
 
@@ -60,12 +60,12 @@ We took the negative of the skin to generate molds for the casting of silicone s
 We chose the directions in where the mold parts will be joined such that easy mold assembly and skin removal after casting the silicone of hardness Shore A10 (DragonSkin 10, Smooth-On, Inc.) is ensured. We introduced isopropanol between silicone and PLA to separate the mold and the skin.
 <p align="center"><img width="400" src="https://github.com/srl-ethz/Sensorized-Soft-Skin/assets/152282116/39160b82-25b3-4cff-ba24-667205e113f5" /></p>
 
-## Sensors
+### ${{\color{RoyalBlue}{\textsf{Sensors\}}}}\$
 We functionalized the skin with piezoresistive pressure sensors. Their placement density aligns with the biologic sensitivity found in literature. Three on the finger tips, three on the distal phalangeals, two on the proximal phalangelas and five at the edges of the robotic skeleton's palm .
 
 The sensors consisted of a piezoresistive sensing layer, which are covered with a silicone hemisphere. The silicone tips were glued on with nonconductive epoxy polymer. The silicone transfers the force over the piezoresistive sensing layer to the electrodes. By compression of the conductive material the resistance is reduced when force is applied. The sensors capability to detect different amount of forces could be shown in previous research. The sensors were serially connected. For each finger and the palm a separate flexible PCB is placed between the robotic skeleton and the skin. The  flexible PCBs are routed behind the hand for the read out.
 
-## Testing
+### ${{\color{RoyalBlue}{\textsf{Testing}}}}\$
 To assess the effect of our custom skin on the manipulation capabilities of the Faive Hand, we performed both dynamic and static tests.
 
 
@@ -80,11 +80,11 @@ For the sensor evaluation in use with the robotic hand, we mounted them on the P
 
 The sensor performance test consisted of grasping a set of objects and interaction. We grasped a 50g weight between thumb, index and middle finger and a mustard can with a power grip. As human-robot interaction task, we did a handshake between robotic and human hand. The relaxed hand position and a closure of the hand without holding any object were the comparisons. The sensitivity of the sensors was determined as change in resistance during the interaction.
 
-## Object detection with grasping
+### ${{\color{RoyalBlue}{\textsf{Object detection with grasping\}}}}\$
 To show the potential of the embedded tactile sensors, we implemented a simple object identification based on their resistance values. Compared to recent successful tactile systems like Z. H. Yin et al., we had abundant data: each of the 46 sensors has been monitored through an ADC at a rate of 20Hz. This was first fed through a median filter of width 0.5 seconds to get rid of outliers that might have appeared in the case of hand motions or unreliable sensor contact states. Similarly to the object classification approach from B. S. Homberg et al., we use unsupervised learning to cluster the filtered data stream from the grasped objects. To accommodate the relatively high number of dimensions, we chose to visualize the incoming measurements with t-distributed Stochastic Neighbor Embedding. The test was performed with and without skin.
 
-# Results
-## Skin Quality
+## ${{\color{RoyalBlue}{\textsf{Results\}}}}\$
+### ${{\color{RoyalBlue}{\textsf{Skin Quality\}}}}\$
 The layers of printed skins were visible and susceptible to tears. Removal of support and mounting of the skin on the hand led to ruptures. Narrow origami structures and conversion zones from origami to phalangeal parts often showed discontinuities of the skin.
 
 cast skins had smooth surfaces with only few air bubbles. Tears from mold removal were merely prominent at the MCP joints and locations where mold parts have been assembled. Mold release spray on PLA prior to silicone casting as well as rinsing of isopropanol over the silicone skin after curing facilitated the separation of mold and skin. The occurrence of skin tears was thereby reduced.
@@ -94,7 +94,7 @@ Next to the integrity of the skin, the time needed to fabricate the skin determi
 Fabricating the final skin took 72 hours when including the time needed for the mold printing. Once the mold is ready, casting the skin is a more time efficient and reliable manufacturing method than printing.
 <p align="center"><img width="400" src="https://github.com/srl-ethz/Sensorized-Soft-Skin/assets/152282116/635fedee-34e8-49bb-b9b2-3bb4ac64b1ef" /></p>
 
-## Performance
+### ${{\color{RoyalBlue}{\textsf{Performance\}}}}\$
 Dynamic tests showed minor difference between casting and printing of single fingers as well as without skin. The latency for printed finger skin application was only 0.5s at 2.5Hz compared to responsiveness of hands without skin. And zero for cast finger skins.
 The range of motion of finger joints was reduced by approximately 0.05rad at 2.5Hz input for finger skins and without skin.
 
@@ -155,7 +155,7 @@ We characterized the sensors to have a nonlinear relationship between applied fo
 In the evaluation of sensor responses in grasping and interaction tasks, we saw that there is a characteristic pattern of responding sensors for different objects and positions. A t-SNE analysis allowed us to distinguish between the open and closed hand position as well as a handshake, mustard can and 50g weight grasp. The sensor responses can be interpreted as a characteristic of the object shapes. The same objects could be distinguished with and without skin. We conclude that the combination of sensors which change their resistance in a task is specific to that grasp task. The task clusters are not overlapping. However, some sensors tended to become unstable with time. Due to the custom-made sensor adhesion on the flexible PCBs, some piezoresistive platelets came loose, especially when putting the skin on or rigorous hand motions. Loosening led to unsteady resistance signals. Sensor stripes of individual fingers could be exchanged to reestablish the sensitivity. The fabrication technique of the sensor stripes also influenced their individual range of resistance change. 
 <p align="center"><img width="400" src="https://github.com/srl-ethz/Sensorized-Soft-Skin/assets/152282116/9e08e2c8-5bbb-4375-9e5a-e059f892e444" /></p>
 
-# Discussion
+## ${{\color{RoyalBlue}{\textsf{Discussion\}}}}\$
 In our study, we have shown that enveloping dexterous robotic hands with a soft skin enhances the grasp quality while keeping our robotic hand's kinematic and dynamic properties intact. So far, no method has been established that does not sacrifice the flexing abilities of joints or the feasibility of manufacturing geometrically complex skin designs. Both problems have been reported by Mohammadi and Tavakoli. Origami structures, which meet the dynamic demands, are hard to parameterize quickly and their shape is a challenge in fabrication.
 Using multi-material 3D printing with SEBS 18A and PLA allowed us to find optimal design parameters, which fulfill the dynamic demands of skins. Because the layers of printed origami skins are prone to rupture and have a poor appearance, final designs are preferably being cast. Although molding took around 32 hours longer than printing, the molded outcomes are more robust and suitable for many grasp operations. Molding also allowed us to join the finger skins with a palm skin.
 
@@ -167,9 +167,9 @@ We placed piezoresistive pressure sensors with a hemispheric silicone tip betwee
 Supplementing robotic hands with tactile intelligence embedded between robot and a soft skin can contribute to making the hands more natural. This additional proprioceptive dimension can, in the future, be used to get tactile feedback and help in robotic learning-based control schemes. For this, hardware- and software-based questions need to be solved. For example, how can we fixate sensors best to avoid their dislocation during interaction? What increases our readout sensitivity and which machine learning tools lead to the best interpretation of the tactile feedback the skins provide?
 
 
-# Open Source
+## ${{\color{RoyalBlue}{\textsf{Open Source\}}}}\$
 We open source the stl-files for the molds [here](....).
 
-# Aknowledgements
+## ${{\color{RoyalBlue}{\textsf{Aknowledgements\}}}}\$
 We are grateful for the ETH Zurich RobotX Research program funding and the SNSF Project grant \#200021\_215489.
 We would like to thank Barnabas Gavin Cangan for supporting us with the measurement setup. We also want to thank Yves Haberthür for his work on the multi-material 3D printer.
