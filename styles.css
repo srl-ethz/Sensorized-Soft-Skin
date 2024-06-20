@@ -2,6 +2,7 @@ body {
     margin: 0;
     background: white;
     text-align: justify;
+    padding: 20px;
 }
 
 .title {
@@ -10,24 +11,23 @@ body {
 }
 
 table {
-    width: 100%;
-    border-collapse: collapse;
+    margin: 0 auto; /* Center the table horizontally */
+    max-width: 80%; /* Limit the maximum width of the table */
+    width: auto; /* Allow the table to adjust its width based on content */
+    border-collapse: collapse; /* Collapse table borders */
 }
 
-/* Styles for table headers and cells */
-th, td {
-    border: 1px solid black;
-    padding: 8px;
-    text-align: right;
+table th,
+table td {
+    border: 1px solid #ddd; /* Add borders to table cells */
+    padding: 8px; /* Padding inside table cells */
+    /* Retain the existing text alignment */
 }
 
-/* Additional styles for table headers */
-th {
-    background-color: #f2f2f2;
-    text-align: center;
+table th {
+    text-align: left; /* Align text inside table headers to the left */
 }
 
-/* Class for left-aligned cells */
-.left-align {
-    text-align: left;
+table td {
+    text-align: left; /* Align text inside table data cells to the left */
 }
