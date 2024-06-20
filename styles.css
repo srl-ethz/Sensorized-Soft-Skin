@@ -11,9 +11,9 @@ body {
 }
 
 table {
-    margin: 0 auto; /* Center the table horizontally */
-    max-width: 75%; /* Limit the maximum width of the table */
-    width: auto; /* Allow the table to adjust its width based on content */
+    /* margin: 0 auto; /* Center the table horizontally */
+    /* max-width: 75%; /* Limit the maximum width of the table */
+    width: 100%; /* auto; /* Allow the table to adjust its width based on content */
     border-collapse: collapse; /* Collapse table borders */
 }
 
@@ -21,11 +21,13 @@ table th,
 table td {
     border: 1px solid #ddd; /* Add borders to table cells */
     padding: 8px; /* Padding inside table cells */
+    text-align: right;
     /* Retain the existing text alignment */
 }
 
 table th {
     text-align: left; /* Align text inside table headers to the left */
+    background-color: #f2f2f2;
 }
 
 table td {
@@ -36,20 +38,20 @@ table td {
 /* For tablets and smaller devices */
 @media (max-width: 1024px) {
     .your-element {
-        padding: 50px;
+        padding: 20px;
     }
 }
 
 /* For mobile phones */
 @media (max-width: 768px) {
     .your-element {
-        padding: 30px;
+        padding: 15px;
     }
 }
 
 /* For smaller mobile phones */
 @media (max-width: 480px) {
     .your-element {
-        padding: 20px;
+        padding: 5px;
     }
 }
