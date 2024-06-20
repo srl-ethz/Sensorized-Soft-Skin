@@ -38,211 +38,214 @@
 
     <br>
 
-    <h2 class="title">Abstract</h2>
-    <img src="https://github.com/srl-ethz/Sensorized-Soft-Skin/assets/152282116/9cef6b80-1b60-4963-b1dc-2b4f700002b8" style="width: 400px; float: right; margin-left: 15px;">
-    Conventional industrial robots often use two-fingered grippers or suction cups to manipulate objects or interact with the world. Because of their simplified design, they are unable to reproduce the dexterity of human hands when manipulating a wide range of objects. While the control of humanoid hands evolved greatly, hardware platforms still lack capabilities, particularly in tactile sensing and providing soft contact surfaces. In this work, we present a method that equips the skeleton of a tendon-driven humanoid hand with a soft and sensorized tactile skin. Multi-material 3D printing allows us to iteratively approach a cast skin design which preserves the robot’s dexterity in terms of range of motion and speed. We demonstrate that a soft skin enables firmer grasps and piezoresistive sensor integration enhances the hand’s tactile sensing capabilities.
+    <main>
+      <h2 class="title">Abstract</h2>
+      <img src="https://github.com/srl-ethz/Sensorized-Soft-Skin/assets/152282116/9cef6b80-1b60-4963-b1dc-2b4f700002b8" style="width: 400px; float: right; margin-left: 15px;">
+      Conventional industrial robots often use two-fingered grippers or suction cups to manipulate objects or interact with the world. Because of their simplified design, they are unable to reproduce the dexterity of human hands when manipulating a wide range of objects. While the control of humanoid hands evolved greatly, hardware platforms still lack capabilities, particularly in tactile sensing and providing soft contact surfaces. In this work, we present a method that equips the skeleton of a tendon-driven humanoid hand with a soft and sensorized tactile skin. Multi-material 3D printing allows us to iteratively approach a cast skin design which preserves the robot’s dexterity in terms of range of motion and speed. We demonstrate that a soft skin enables firmer grasps and piezoresistive sensor integration enhances the hand’s tactile sensing capabilities.
+      
+      <h2 class="title" style="clear: both;">Methods</h2>
+      <h3 class="title">Design</h3>
+      We designed a 1mm thick skin around the Faive robotic hand in a CAD software. Besides a full-hand skin, we did separate designs for finger and palm. Previous work reported an ideal skin thickness of 1mm to trade deformation and fabrication limits. The index and ring finger were identical. A hexagonal origami skin spanned the finger joints. Soft origami gripper have already shown to be able to grasp objects of irregular shape. Their compliance helps in folding around items.
+
+      Our Metacarpophalangeal joints (MCP) had a circular symmetric hexagonal base. The profile of the base was rotated by 30 degrees from one origami plane to the next. The MCP joints consisted of six stacked origamis for the Index, Middle, Ring and Pinky finger. The Proximal Interphalangeal (PIP) and Distal Interphalangeal (DIP) joints were hexagonal and symmetric only with respect to the sagittal plane. The skins of these two joint types consisted of four stacked origamis. The Carpometacarpal (CMC) joint of the thumb was hexagonal and circular symmetric with eight stacked origamis. The thumb's MCP joint skin was a sagittal plane symmetric stack of four origamis. The PIP joint of the thumb was also symmetric w.r.t the sagittal plane and designed as a stack of four origamis. 
+
+      Adjacent joints were connected by skin, surrounding the phalangeals. For the four fingers, distal and proximal phalangeal skin parts had a reinforced, i.e., thickened inner part on the palmar side of the skin. The thickness was determined as the distance between the skin and the robotic skeleton.
+      We designed the palm skin as a smoothly shaped cover of the skeleton.
+      <p align="center"><img width="400" src="https://github.com/srl-ethz/Sensorized-Soft-Skin/assets/152282116/29412292-94f3-4158-88f7-a1d4d169116a" /></p>
+
+      <h3 class="title">Fabrication</h3>
+      We did the prototyping using a multi-material 3D-Printer. The skin made of custom made SEBS with shore hardness 18A and AquaSys120 (Infinite Material Solutions Inc.) as support structure. The water-soluble support allowed us to remove it from the skin without tearing the soft structure. The drawback of 3D-Printing with multi-material printers is, that it's slow compared to conventional 3D printer because of the time consumed for switching the print-heads and for heating up the materials to their extrusion temperature for each layer. Printing soft materials is not as reliable as casting in terms of structure integrity. Printed layers tended to separate and printing resolution is limited by the nozzle size and expansion of the soft material after leaving the nozzle. This limitations challenged the printability of origami structures.
+
+
+
+      Casting is suitable for accurate fabrication of soft designs. Other works discussed the downside of casting being even more time-consuming. First, a mold has to be 3D-printed with a rigid material such as PLA before pouring the silicone into it. Then the material needs to cure before the PLA mold can be removed from the silicone. 
+      We first showed that the dynamic behavior such as range of motion (ROM) and latency of a single finger design is not negatively affected by the skin, before we decided to cast our final skin design in form of a complete skin. Therefore, the skin will be smoother and more robust.
+      We took the negative of the skin to generate molds for the casting of silicone skins. To cast the full-hand skin, fingers, and palm, we split the molds into parts, which could be assembled around the inner parts of the hand's skin. Each finger mold consisted of two parts which were aligned in the sagittal plane. The palm mold was separated into four pieces to minimize the number of parts.
+      We chose the directions in where the mold parts will be joined such that easy mold assembly and skin removal after casting the silicone of hardness Shore A10 (DragonSkin 10, Smooth-On, Inc.) is ensured. We introduced isopropanol between silicone and PLA to separate the mold and the skin.
+      <p align="center"><img width="400" src="https://github.com/srl-ethz/Sensorized-Soft-Skin/assets/152282116/39160b82-25b3-4cff-ba24-667205e113f5" /></p>
+
+      <h3 class="title">Sensors</h3>
+      We functionalized the skin with piezoresistive pressure sensors. Their placement density aligns with the biologic sensitivity found in literature. Three on the finger tips, three on the distal phalangeals, two on the proximal phalangelas and five at the edges of the robotic skeleton's palm .
+
+      The sensors consisted of a piezoresistive sensing layer, which are covered with a silicone hemisphere. The silicone tips were glued on with nonconductive epoxy polymer. The silicone transfers the force over the piezoresistive sensing layer to the electrodes. By compression of the conductive material the resistance is reduced when force is applied. The sensors capability to detect different amount of forces could be shown in previous research. The sensors were serially connected. For each finger and the palm a separate flexible PCB is placed between the robotic skeleton and the skin. The  flexible PCBs are routed behind the hand for the read out.
+
+      <h3 class="title">Testing</h3>
+      To assess the effect of our custom skin on the manipulation capabilities of the Faive Hand, we performed both dynamic and static tests.
+
+
+      For the dynamic performance evaluation, we compared printed and cast finger skin prototypes without sensors. We commanded flexion of the PIP and MCP joint and abduction (ABD) of the MCP joint. The inputs were step and sinusoidal commands of frequencies ranging from 0.5Hz to 2.5Hz in 0.5Hz increments. 
+      Both the cast skin and individual fingers of the final printed version were tested against the hand without skin (see Figure~\ref{fig:rom}). We calculated the command gain as the maximal ROM over the achieved ROM. For the latency, we calculated the delay time between commanded finger position and reached position. 
+
+      To assess the skin's impact in static scenarios, we conducted a quasi-static pull test on the grip strength. We used an LDPE bottle as the benchmark object with and without change of surface. We attached a hook to the bottle's cap, and through it, we pulled the bottle in a quasi-static manner along its longitudinal axis. We logged the pulling force with the help of a force gauge attached directly to the hook. The grasp type was a power grip commanded with 500mA maximal motor current. To control the friction between the hand and the bottle, we added sandpaper with a grit size of 600 and lab gloves wrapped around the bottle in two other experiments. Each surface test was repeated five times for both, skin and no skin setup. We calculated the mean and standard deviation of the maximal force that could be resisted in the five tests per experiment.
+
+      We characterized the sensors before integrating them in the skin. We analyzed the sensor response to increasing force application. Also the change in resistance over time when pressing the silicone tip with 1.52N and reducing the force to 0.45N and the drift of resistance over 5000 was recorded. In the cycling test, We alternated between forces of 0.8N and 0.2N. Before the sensor integration on the hand we compared the signals from flexible PCBs placed flat on a table and wrapped around table edges to test the influence of bending on the sensing.
+
+      For the sensor evaluation in use with the robotic hand, we mounted them on the PLA skeleton of the Faive hand. The flexible PCBs were covered with the cast silicone skin. Mounting the skin on the sensorized hand had to be done with caution to avoid displacement of the sensor's silicone tips.
+
+      The sensor performance test consisted of grasping a set of objects and interaction. We grasped a 50g weight between thumb, index and middle finger and a mustard can with a power grip. As human-robot interaction task, we did a handshake between robotic and human hand. The relaxed hand position and a closure of the hand without holding any object were the comparisons. The sensitivity of the sensors was determined as change in resistance during the interaction.
+
+      <h3 class="title">Object detection with grasping</h3>
+      To show the potential of the embedded tactile sensors, we implemented a simple object identification based on their resistance values. Compared to recent successful tactile systems like Z. H. Yin et al., we had abundant data: each of the 46 sensors has been monitored through an ADC at a rate of 20Hz. This was first fed through a median filter of width 0.5 seconds to get rid of outliers that might have appeared in the case of hand motions or unreliable sensor contact states. Similarly to the object classification approach from B. S. Homberg et al., we use unsupervised learning to cluster the filtered data stream from the grasped objects. To accommodate the relatively high number of dimensions, we chose to visualize the incoming measurements with t-distributed Stochastic Neighbor Embedding. The test was performed with and without skin.
+
+      <h2 class="title">Results</h2>
+      <h3 class="title">Skin Quality</h3>
+      The layers of printed skins were visible and susceptible to tears. Removal of support and mounting of the skin on the hand led to ruptures. Narrow origami structures and conversion zones from origami to phalangeal parts often showed discontinuities of the skin.
+
+      cast skins had smooth surfaces with only few air bubbles. Tears from mold removal were merely prominent at the MCP joints and locations where mold parts have been assembled. Mold release spray on PLA prior to silicone casting as well as rinsing of isopropanol over the silicone skin after curing facilitated the separation of mold and skin. The occurrence of skin tears was thereby reduced.
+
+      Next to the integrity of the skin, the time needed to fabricate the skin determined the choice of manufacturing method. Printing all five fingers is in total 1.8 times (around 32h) faster than casting an entire skin around the hand. The estimated printing time was calculated automatically by the printers slicing program. For the multi-material printer, the time might exceed the estimate by two to four hours depending on the amount of layers. The additional time was due to the heating-up of the nozzle to the materials extrusion temperature and the print head switch.
+
+      Fabricating the final skin took 72 hours when including the time needed for the mold printing. Once the mold is ready, casting the skin is a more time efficient and reliable manufacturing method than printing.
+      <p align="center"><img width="400" src="https://github.com/srl-ethz/Sensorized-Soft-Skin/assets/152282116/635fedee-34e8-49bb-b9b2-3bb4ac64b1ef" /></p>
+
+      <h3 class="title">Performance</h3>
+      Dynamic tests showed minor difference between casting and printing of single fingers as well as without skin. The latency for printed finger skin application was only 0.5s at 2.5Hz compared to responsiveness of hands without skin. And zero for cast finger skins.
+      The range of motion of finger joints was reduced by approximately 0.05rad at 2.5Hz input for finger skins and without skin.
+
+      </p>
+      <table>
+          <tr>
+              <th class="left-align">Model</th>
+              <th>2.5Hz</th>
+              <th>1.5Hz</th>
+              <th>0.5Hz</th>
+          </tr>
+          <tr>
+              <td class="left-align">Δ Thumb DIP</td>
+              <td>16.44</td>
+              <td>13.01</td>
+              <td>5.44</td>
+          </tr>
+          <tr>
+              <td class="left-align">Δ Thumb ABD</td>
+              <td>0.29</td>
+              <td>5.43</td>
+              <td>0.88</td>
+          </tr>
+          <tr>
+              <td class="left-align">Δ Thumb MCP</td>
+              <td>1.70</td>
+              <td>6.85</td>
+              <td>1.93</td>
+          </tr>
+          <tr>
+              <td class="left-align">Δ Thumb PIP</td>
+              <td>2.02</td>
+              <td>5.44</td>
+              <td>2.60</td>
+          </tr>
+          <tr>
+              <td class="left-align">Δ Index ABD</td>
+              <td>0.26</td>
+              <td>1.50</td>
+              <td>0.14</td>
+          </tr>
+          <tr>
+              <td class="left-align">Δ Index MCP</td>
+              <td>-4.86</td>
+              <td>-10.24</td>
+              <td>-2.04</td>
+          </tr>
+          <tr>
+              <td class="left-align">Δ Index PIP</td>
+              <td>0.49</td>
+              <td>6.47</td>
+              <td>2.85</td>
+          </tr>
+          <tr>
+              <td class="left-align">Δ Middle ABD</td>
+              <td>0.03</td>
+              <td>1.44</td>
+              <td>0.15</td>
+          </tr>
+          <tr>
+              <td class="left-align">Δ Middle MCP</td>
+              <td>-0.11</td>
+              <td>3.78</td>
+              <td>-0.03</td>
+          </tr>
+          <tr>
+              <td class="left-align">Δ Middle PIP</td>
+              <td>0.01</td>
+              <td>1.74</td>
+              <td>-0.92</td>
+          </tr>
+          <tr>
+              <td class="left-align">Δ Ring ABD</td>
+              <td>0.13</td>
+              <td>1.63</td>
+              <td>0.39</td>
+          </tr>
+          <tr>
+              <td class="left-align">Δ Ring MCP</td>
+              <td>-3.53</td>
+              <td>-3.60</td>
+              <td>-3.55</td>
+          </tr>
+          <tr>
+              <td class="left-align">Δ Ring PIP</td>
+              <td>-1.06</td>
+              <td>-2.34</td>
+              <td>1.72</td>
+          </tr>
+          <tr>
+              <td class="left-align">Δ Pinky ABD</td>
+              <td>-0.63</td>
+              <td>-4.01</td>
+              <td>-1.22</td>
+          </tr>
+          <tr>
+              <td class="left-align">Δ Pinky MCP</td>
+              <td>1.82</td>
+              <td>3.17</td>
+              <td>3.20</td>
+          </tr>
+          <tr>
+              <td class="left-align">Δ Pinky PIP</td>
+              <td>-0.54</td>
+              <td>1.15</td>
+              <td>3.14</td>
+          </tr>
+      </table>
+      <br>
+
+      In the comparative tests of cast skin and no skin, we showed that both setups perform equally well <a href="https://www.youtube.com/watch?v=wDtXIPDn0Rk">See supplementary video</a>. The range of motion for all joints (PIP flexion, MCP flexion and abduction) was maintained with the skin on the hand. At high frequencies (2.5Hz), the range of motion was reduced for skin and no skin hands. Since we used the EKF of the hand for our range measurements, our values were susceptible to calibration errors, which sometimes resulted in negative values - like in the case of the index MCP joint. Excluding these cases, we saw that the maximal impacts are in the range of 10 degrees, so we concluded that there was no major adverse effect from the skin on the dynamic performance.
+      <p align="center"><img width="400" src="https://github.com/srl-ethz/Sensorized-Soft-Skin/assets/152282116/fdb8d048-8d79-4953-89d8-253a76bed059" /></p>
+
+      We saw in force tests, that a power grasp could hold a bottle of smooth surface (LDPE and lab glove/rubber) against higher force than without skin <a href="https://www.youtube.com/watch?v=wDtXIPDn0Rk">See supplementary video</a>. The mean force was quadrupled for LDPE and doubled for rubber.
+      Surfaces with high friction coefficients allowed for higher forces in both cases, with an increased standard deviation in maximal force.
+
+      A paired T-test revealed a significant difference in resistance to pulling force between hands with and without skin when the grasped object had rubber surfaces. The p-value was with 0.048% under the 5% significance level. Rough surfaces like sandpaper could be held comparably well for hands with and without skin.
+      <p align="center"><img width="400" src="https://github.com/srl-ethz/Sensorized-Soft-Skin/assets/152282116/70b34497-2aa5-4765-9084-76e75cec6778" /></p>
+      <p align="center"><img width="400" src="https://github.com/srl-ethz/Sensorized-Soft-Skin/assets/152282116/f000b105-0b32-4f85-8ffb-4f129805f864" /></p>
+
+      We characterized the sensors to have a nonlinear relationship between applied force and resistance. At 2.5N, the relative resistance is reduced by approximately 40 percent. With prolonged cycling force application, the resistance increases for untouched and pressed status. The drift is below 1000 Ohm for 5000 repetitions, which is a relative change of 0.3.
+      <p align="center"><img width="400" src="https://github.com/srl-ethz/Sensorized-Soft-Skin/assets/152282116/78dfd74e-9180-4fac-9414-c8f1b77b7f5d" /></p>
+
+      In the evaluation of sensor responses in grasping and interaction tasks, we saw that there is a characteristic pattern of responding sensors for different objects and positions. A t-SNE analysis allowed us to distinguish between the open and closed hand position as well as a handshake, mustard can and 50g weight grasp. The sensor responses can be interpreted as a characteristic of the object shapes. The same objects could be distinguished with and without skin. We conclude that the combination of sensors which change their resistance in a task is specific to that grasp task. The task clusters are not overlapping. However, some sensors tended to become unstable with time. Due to the custom-made sensor adhesion on the flexible PCBs, some piezoresistive platelets came loose, especially when putting the skin on or rigorous hand motions. Loosening led to unsteady resistance signals. Sensor stripes of individual fingers could be exchanged to reestablish the sensitivity. The fabrication technique of the sensor stripes also influenced their individual range of resistance change. 
+      <p align="center"><img width="400" src="https://github.com/srl-ethz/Sensorized-Soft-Skin/assets/152282116/9e08e2c8-5bbb-4375-9e5a-e059f892e444" /></p>
+
+      <h2 class="title">Discussion</h2>
+      In our study, we have shown that enveloping dexterous robotic hands with a soft skin enhances the grasp quality while keeping our robotic hand's kinematic and dynamic properties intact. So far, no method has been established that does not sacrifice the flexing abilities of joints or the feasibility of manufacturing geometrically complex skin designs. Both problems have been reported by Mohammadi and Tavakoli. Origami structures, which meet the dynamic demands, are hard to parameterize quickly and their shape is a challenge in fabrication.
+      Using multi-material 3D printing with SEBS 18A and PLA allowed us to find optimal design parameters, which fulfill the dynamic demands of skins. Because the layers of printed origami skins are prone to rupture and have a poor appearance, final designs are preferably being cast. Although molding took around 32 hours longer than printing, the molded outcomes are more robust and suitable for many grasp operations. Molding also allowed us to join the finger skins with a palm skin.
+
+      We showed that cast skins enhance the grasp performance of smooth objects with a power grasp. Compared to robotic hands without a skin, soft skins enable holding items with a low frictional surface, like LDPE or rubber, against up to 4 times more force. For more reliable statements about significance, a larger data set would be needed. 
+      We also had to take into account that the skin adds additional payload to the motors that are powering the joints. For a firm grasp, low motor currents consume energy which is caused to a large amount by the skin which tries to pull the fingers back into an extended position. The range of motion could be conserved by applying high enough currents for joint flexion and by designing the joint´s skin as hexagonal origami. The largest reduction in range of motion was seen for the thumb's DIP joint. We assume this is due to too few strength of the motors to bend the joint against the skin. The same dynamic performance as without skin can be maintained. This is of special importance when handling objects. We validated, that the latency between sinusoidal and step input commands is in the same range with and without skin. The skin is especially also not slower than the version without skin at high frequency commands of 2.5Hz.
+
+      We placed piezoresistive pressure sensors with a hemispheric silicone tip between the robotic skeleton and skin. We could distinguish grasps of differently sized objects like mustard can and a 50g weight. The set of sensors that are distributed over the hand is also indicative of the hand's state. Relaxed open and closed finger positions were differentiable from the object grasps and human-robot interactions like handshaking. The skin did not impair the detectability of various objects but rather helped in holding them with more stability. We saw that the silicone allows to transfer the forces over the silicone to the sensors. Because custom-made sensors tend to dislocate with time, their sensitivity might become compromised in prolonged dynamic use. We used only 46 sensors. Therefore, the sensor density across the hand is not very high. It would be beneficial for object classifications to have a better spatial resolution. More sensors would help in localizing point contacts with objects on a smaller scale. The sensor nonlinear drift is relatively large but might stabilize after 5000 cycles of loading. Further calibration of the sensors is needed for prolonged grasping tasks.
+
+      Supplementing robotic hands with tactile intelligence embedded between robot and a soft skin can contribute to making the hands more natural. This additional proprioceptive dimension can, in the future, be used to get tactile feedback and help in robotic learning-based control schemes. For this, hardware- and software-based questions need to be solved. For example, how can we fixate sensors best to avoid their dislocation during interaction? What increases our readout sensitivity and which machine learning tools lead to the best interpretation of the tactile feedback the skins provide?
+
+
+      <h2 class="title">Open Source</h2>
+      We open source the stl- and 3mf-files for the <a href="https://github.com/srl-ethz/Sensorized-Soft-Skin/tree/main/skin%20molds">skin molds</a> on Github.
+
+      <h2 class="title">Aknowledgements</h2>
+      We are grateful for the ETH Zurich RobotX Research program funding and the SNSF Project grant \#200021\_215489.
+      We would like to thank Barnabas Gavin Cangan for supporting us with the measurement setup. We also want to thank Yves Haberthür for his work on the multi-material 3D printer.
     
-    <h2 class="title" style="clear: both;">Methods</h2>
-    <h3 class="title">Design</h3>
-    We designed a 1mm thick skin around the Faive robotic hand in a CAD software. Besides a full-hand skin, we did separate designs for finger and palm. Previous work reported an ideal skin thickness of 1mm to trade deformation and fabrication limits. The index and ring finger were identical. A hexagonal origami skin spanned the finger joints. Soft origami gripper have already shown to be able to grasp objects of irregular shape. Their compliance helps in folding around items.
+    </main>
 
-    Our Metacarpophalangeal joints (MCP) had a circular symmetric hexagonal base. The profile of the base was rotated by 30 degrees from one origami plane to the next. The MCP joints consisted of six stacked origamis for the Index, Middle, Ring and Pinky finger. The Proximal Interphalangeal (PIP) and Distal Interphalangeal (DIP) joints were hexagonal and symmetric only with respect to the sagittal plane. The skins of these two joint types consisted of four stacked origamis. The Carpometacarpal (CMC) joint of the thumb was hexagonal and circular symmetric with eight stacked origamis. The thumb's MCP joint skin was a sagittal plane symmetric stack of four origamis. The PIP joint of the thumb was also symmetric w.r.t the sagittal plane and designed as a stack of four origamis. 
-
-    Adjacent joints were connected by skin, surrounding the phalangeals. For the four fingers, distal and proximal phalangeal skin parts had a reinforced, i.e., thickened inner part on the palmar side of the skin. The thickness was determined as the distance between the skin and the robotic skeleton.
-    We designed the palm skin as a smoothly shaped cover of the skeleton.
-    <p align="center"><img width="400" src="https://github.com/srl-ethz/Sensorized-Soft-Skin/assets/152282116/29412292-94f3-4158-88f7-a1d4d169116a" /></p>
-
-    <h3 class="title">Fabrication</h3>
-    We did the prototyping using a multi-material 3D-Printer. The skin made of custom made SEBS with shore hardness 18A and AquaSys120 (Infinite Material Solutions Inc.) as support structure. The water-soluble support allowed us to remove it from the skin without tearing the soft structure. The drawback of 3D-Printing with multi-material printers is, that it's slow compared to conventional 3D printer because of the time consumed for switching the print-heads and for heating up the materials to their extrusion temperature for each layer. Printing soft materials is not as reliable as casting in terms of structure integrity. Printed layers tended to separate and printing resolution is limited by the nozzle size and expansion of the soft material after leaving the nozzle. This limitations challenged the printability of origami structures.
-
-
-
-    Casting is suitable for accurate fabrication of soft designs. Other works discussed the downside of casting being even more time-consuming. First, a mold has to be 3D-printed with a rigid material such as PLA before pouring the silicone into it. Then the material needs to cure before the PLA mold can be removed from the silicone. 
-    We first showed that the dynamic behavior such as range of motion (ROM) and latency of a single finger design is not negatively affected by the skin, before we decided to cast our final skin design in form of a complete skin. Therefore, the skin will be smoother and more robust.
-    We took the negative of the skin to generate molds for the casting of silicone skins. To cast the full-hand skin, fingers, and palm, we split the molds into parts, which could be assembled around the inner parts of the hand's skin. Each finger mold consisted of two parts which were aligned in the sagittal plane. The palm mold was separated into four pieces to minimize the number of parts.
-    We chose the directions in where the mold parts will be joined such that easy mold assembly and skin removal after casting the silicone of hardness Shore A10 (DragonSkin 10, Smooth-On, Inc.) is ensured. We introduced isopropanol between silicone and PLA to separate the mold and the skin.
-    <p align="center"><img width="400" src="https://github.com/srl-ethz/Sensorized-Soft-Skin/assets/152282116/39160b82-25b3-4cff-ba24-667205e113f5" /></p>
-
-    <h3 class="title">Sensors</h3>
-    We functionalized the skin with piezoresistive pressure sensors. Their placement density aligns with the biologic sensitivity found in literature. Three on the finger tips, three on the distal phalangeals, two on the proximal phalangelas and five at the edges of the robotic skeleton's palm .
-
-    The sensors consisted of a piezoresistive sensing layer, which are covered with a silicone hemisphere. The silicone tips were glued on with nonconductive epoxy polymer. The silicone transfers the force over the piezoresistive sensing layer to the electrodes. By compression of the conductive material the resistance is reduced when force is applied. The sensors capability to detect different amount of forces could be shown in previous research. The sensors were serially connected. For each finger and the palm a separate flexible PCB is placed between the robotic skeleton and the skin. The  flexible PCBs are routed behind the hand for the read out.
-
-    <h3 class="title">Testing</h3>
-    To assess the effect of our custom skin on the manipulation capabilities of the Faive Hand, we performed both dynamic and static tests.
-
-
-    For the dynamic performance evaluation, we compared printed and cast finger skin prototypes without sensors. We commanded flexion of the PIP and MCP joint and abduction (ABD) of the MCP joint. The inputs were step and sinusoidal commands of frequencies ranging from 0.5Hz to 2.5Hz in 0.5Hz increments. 
-    Both the cast skin and individual fingers of the final printed version were tested against the hand without skin (see Figure~\ref{fig:rom}). We calculated the command gain as the maximal ROM over the achieved ROM. For the latency, we calculated the delay time between commanded finger position and reached position. 
-
-    To assess the skin's impact in static scenarios, we conducted a quasi-static pull test on the grip strength. We used an LDPE bottle as the benchmark object with and without change of surface. We attached a hook to the bottle's cap, and through it, we pulled the bottle in a quasi-static manner along its longitudinal axis. We logged the pulling force with the help of a force gauge attached directly to the hook. The grasp type was a power grip commanded with 500mA maximal motor current. To control the friction between the hand and the bottle, we added sandpaper with a grit size of 600 and lab gloves wrapped around the bottle in two other experiments. Each surface test was repeated five times for both, skin and no skin setup. We calculated the mean and standard deviation of the maximal force that could be resisted in the five tests per experiment.
-
-    We characterized the sensors before integrating them in the skin. We analyzed the sensor response to increasing force application. Also the change in resistance over time when pressing the silicone tip with 1.52N and reducing the force to 0.45N and the drift of resistance over 5000 was recorded. In the cycling test, We alternated between forces of 0.8N and 0.2N. Before the sensor integration on the hand we compared the signals from flexible PCBs placed flat on a table and wrapped around table edges to test the influence of bending on the sensing.
-
-    For the sensor evaluation in use with the robotic hand, we mounted them on the PLA skeleton of the Faive hand. The flexible PCBs were covered with the cast silicone skin. Mounting the skin on the sensorized hand had to be done with caution to avoid displacement of the sensor's silicone tips.
-
-    The sensor performance test consisted of grasping a set of objects and interaction. We grasped a 50g weight between thumb, index and middle finger and a mustard can with a power grip. As human-robot interaction task, we did a handshake between robotic and human hand. The relaxed hand position and a closure of the hand without holding any object were the comparisons. The sensitivity of the sensors was determined as change in resistance during the interaction.
-
-    <h3 class="title">Object detection with grasping</h3>
-    To show the potential of the embedded tactile sensors, we implemented a simple object identification based on their resistance values. Compared to recent successful tactile systems like Z. H. Yin et al., we had abundant data: each of the 46 sensors has been monitored through an ADC at a rate of 20Hz. This was first fed through a median filter of width 0.5 seconds to get rid of outliers that might have appeared in the case of hand motions or unreliable sensor contact states. Similarly to the object classification approach from B. S. Homberg et al., we use unsupervised learning to cluster the filtered data stream from the grasped objects. To accommodate the relatively high number of dimensions, we chose to visualize the incoming measurements with t-distributed Stochastic Neighbor Embedding. The test was performed with and without skin.
-
-    <h2 class="title">Results</h2>
-    <h3 class="title">Skin Quality</h3>
-    The layers of printed skins were visible and susceptible to tears. Removal of support and mounting of the skin on the hand led to ruptures. Narrow origami structures and conversion zones from origami to phalangeal parts often showed discontinuities of the skin.
-
-    cast skins had smooth surfaces with only few air bubbles. Tears from mold removal were merely prominent at the MCP joints and locations where mold parts have been assembled. Mold release spray on PLA prior to silicone casting as well as rinsing of isopropanol over the silicone skin after curing facilitated the separation of mold and skin. The occurrence of skin tears was thereby reduced.
-
-    Next to the integrity of the skin, the time needed to fabricate the skin determined the choice of manufacturing method. Printing all five fingers is in total 1.8 times (around 32h) faster than casting an entire skin around the hand. The estimated printing time was calculated automatically by the printers slicing program. For the multi-material printer, the time might exceed the estimate by two to four hours depending on the amount of layers. The additional time was due to the heating-up of the nozzle to the materials extrusion temperature and the print head switch.
-
-    Fabricating the final skin took 72 hours when including the time needed for the mold printing. Once the mold is ready, casting the skin is a more time efficient and reliable manufacturing method than printing.
-    <p align="center"><img width="400" src="https://github.com/srl-ethz/Sensorized-Soft-Skin/assets/152282116/635fedee-34e8-49bb-b9b2-3bb4ac64b1ef" /></p>
-
-    <h3 class="title">Performance</h3>
-    Dynamic tests showed minor difference between casting and printing of single fingers as well as without skin. The latency for printed finger skin application was only 0.5s at 2.5Hz compared to responsiveness of hands without skin. And zero for cast finger skins.
-    The range of motion of finger joints was reduced by approximately 0.05rad at 2.5Hz input for finger skins and without skin.
-
-    </p>
-    <table>
-        <tr>
-            <th class="left-align">Model</th>
-            <th>2.5Hz</th>
-            <th>1.5Hz</th>
-            <th>0.5Hz</th>
-        </tr>
-        <tr>
-            <td class="left-align">Δ Thumb DIP</td>
-            <td>16.44</td>
-            <td>13.01</td>
-            <td>5.44</td>
-        </tr>
-        <tr>
-            <td class="left-align">Δ Thumb ABD</td>
-            <td>0.29</td>
-            <td>5.43</td>
-            <td>0.88</td>
-        </tr>
-        <tr>
-            <td class="left-align">Δ Thumb MCP</td>
-            <td>1.70</td>
-            <td>6.85</td>
-            <td>1.93</td>
-        </tr>
-        <tr>
-            <td class="left-align">Δ Thumb PIP</td>
-            <td>2.02</td>
-            <td>5.44</td>
-            <td>2.60</td>
-        </tr>
-        <tr>
-            <td class="left-align">Δ Index ABD</td>
-            <td>0.26</td>
-            <td>1.50</td>
-            <td>0.14</td>
-        </tr>
-        <tr>
-            <td class="left-align">Δ Index MCP</td>
-            <td>-4.86</td>
-            <td>-10.24</td>
-            <td>-2.04</td>
-        </tr>
-        <tr>
-            <td class="left-align">Δ Index PIP</td>
-            <td>0.49</td>
-            <td>6.47</td>
-            <td>2.85</td>
-        </tr>
-        <tr>
-            <td class="left-align">Δ Middle ABD</td>
-            <td>0.03</td>
-            <td>1.44</td>
-            <td>0.15</td>
-        </tr>
-        <tr>
-            <td class="left-align">Δ Middle MCP</td>
-            <td>-0.11</td>
-            <td>3.78</td>
-            <td>-0.03</td>
-        </tr>
-        <tr>
-            <td class="left-align">Δ Middle PIP</td>
-            <td>0.01</td>
-            <td>1.74</td>
-            <td>-0.92</td>
-        </tr>
-        <tr>
-            <td class="left-align">Δ Ring ABD</td>
-            <td>0.13</td>
-            <td>1.63</td>
-            <td>0.39</td>
-        </tr>
-        <tr>
-            <td class="left-align">Δ Ring MCP</td>
-            <td>-3.53</td>
-            <td>-3.60</td>
-            <td>-3.55</td>
-        </tr>
-        <tr>
-            <td class="left-align">Δ Ring PIP</td>
-            <td>-1.06</td>
-            <td>-2.34</td>
-            <td>1.72</td>
-        </tr>
-        <tr>
-            <td class="left-align">Δ Pinky ABD</td>
-            <td>-0.63</td>
-            <td>-4.01</td>
-            <td>-1.22</td>
-        </tr>
-        <tr>
-            <td class="left-align">Δ Pinky MCP</td>
-            <td>1.82</td>
-            <td>3.17</td>
-            <td>3.20</td>
-        </tr>
-        <tr>
-            <td class="left-align">Δ Pinky PIP</td>
-            <td>-0.54</td>
-            <td>1.15</td>
-            <td>3.14</td>
-        </tr>
-    </table>
-    <br>
-
-    In the comparative tests of cast skin and no skin, we showed that both setups perform equally well <a href="https://www.youtube.com/watch?v=wDtXIPDn0Rk">See supplementary video</a>. The range of motion for all joints (PIP flexion, MCP flexion and abduction) was maintained with the skin on the hand. At high frequencies (2.5Hz), the range of motion was reduced for skin and no skin hands. Since we used the EKF of the hand for our range measurements, our values were susceptible to calibration errors, which sometimes resulted in negative values - like in the case of the index MCP joint. Excluding these cases, we saw that the maximal impacts are in the range of 10 degrees, so we concluded that there was no major adverse effect from the skin on the dynamic performance.
-    <p align="center"><img width="400" src="https://github.com/srl-ethz/Sensorized-Soft-Skin/assets/152282116/fdb8d048-8d79-4953-89d8-253a76bed059" /></p>
-
-    We saw in force tests, that a power grasp could hold a bottle of smooth surface (LDPE and lab glove/rubber) against higher force than without skin <a href="https://www.youtube.com/watch?v=wDtXIPDn0Rk">See supplementary video</a>. The mean force was quadrupled for LDPE and doubled for rubber.
-    Surfaces with high friction coefficients allowed for higher forces in both cases, with an increased standard deviation in maximal force.
-
-    A paired T-test revealed a significant difference in resistance to pulling force between hands with and without skin when the grasped object had rubber surfaces. The p-value was with 0.048% under the 5% significance level. Rough surfaces like sandpaper could be held comparably well for hands with and without skin.
-    <p align="center"><img width="400" src="https://github.com/srl-ethz/Sensorized-Soft-Skin/assets/152282116/70b34497-2aa5-4765-9084-76e75cec6778" /></p>
-    <p align="center"><img width="400" src="https://github.com/srl-ethz/Sensorized-Soft-Skin/assets/152282116/f000b105-0b32-4f85-8ffb-4f129805f864" /></p>
-
-    We characterized the sensors to have a nonlinear relationship between applied force and resistance. At 2.5N, the relative resistance is reduced by approximately 40 percent. With prolonged cycling force application, the resistance increases for untouched and pressed status. The drift is below 1000 Ohm for 5000 repetitions, which is a relative change of 0.3.
-    <p align="center"><img width="400" src="https://github.com/srl-ethz/Sensorized-Soft-Skin/assets/152282116/78dfd74e-9180-4fac-9414-c8f1b77b7f5d" /></p>
-
-    In the evaluation of sensor responses in grasping and interaction tasks, we saw that there is a characteristic pattern of responding sensors for different objects and positions. A t-SNE analysis allowed us to distinguish between the open and closed hand position as well as a handshake, mustard can and 50g weight grasp. The sensor responses can be interpreted as a characteristic of the object shapes. The same objects could be distinguished with and without skin. We conclude that the combination of sensors which change their resistance in a task is specific to that grasp task. The task clusters are not overlapping. However, some sensors tended to become unstable with time. Due to the custom-made sensor adhesion on the flexible PCBs, some piezoresistive platelets came loose, especially when putting the skin on or rigorous hand motions. Loosening led to unsteady resistance signals. Sensor stripes of individual fingers could be exchanged to reestablish the sensitivity. The fabrication technique of the sensor stripes also influenced their individual range of resistance change. 
-    <p align="center"><img width="400" src="https://github.com/srl-ethz/Sensorized-Soft-Skin/assets/152282116/9e08e2c8-5bbb-4375-9e5a-e059f892e444" /></p>
-
-    <h2 class="title">Discussion</h2>
-    In our study, we have shown that enveloping dexterous robotic hands with a soft skin enhances the grasp quality while keeping our robotic hand's kinematic and dynamic properties intact. So far, no method has been established that does not sacrifice the flexing abilities of joints or the feasibility of manufacturing geometrically complex skin designs. Both problems have been reported by Mohammadi and Tavakoli. Origami structures, which meet the dynamic demands, are hard to parameterize quickly and their shape is a challenge in fabrication.
-    Using multi-material 3D printing with SEBS 18A and PLA allowed us to find optimal design parameters, which fulfill the dynamic demands of skins. Because the layers of printed origami skins are prone to rupture and have a poor appearance, final designs are preferably being cast. Although molding took around 32 hours longer than printing, the molded outcomes are more robust and suitable for many grasp operations. Molding also allowed us to join the finger skins with a palm skin.
-
-    We showed that cast skins enhance the grasp performance of smooth objects with a power grasp. Compared to robotic hands without a skin, soft skins enable holding items with a low frictional surface, like LDPE or rubber, against up to 4 times more force. For more reliable statements about significance, a larger data set would be needed. 
-    We also had to take into account that the skin adds additional payload to the motors that are powering the joints. For a firm grasp, low motor currents consume energy which is caused to a large amount by the skin which tries to pull the fingers back into an extended position. The range of motion could be conserved by applying high enough currents for joint flexion and by designing the joint´s skin as hexagonal origami. The largest reduction in range of motion was seen for the thumb's DIP joint. We assume this is due to too few strength of the motors to bend the joint against the skin. The same dynamic performance as without skin can be maintained. This is of special importance when handling objects. We validated, that the latency between sinusoidal and step input commands is in the same range with and without skin. The skin is especially also not slower than the version without skin at high frequency commands of 2.5Hz.
-
-    We placed piezoresistive pressure sensors with a hemispheric silicone tip between the robotic skeleton and skin. We could distinguish grasps of differently sized objects like mustard can and a 50g weight. The set of sensors that are distributed over the hand is also indicative of the hand's state. Relaxed open and closed finger positions were differentiable from the object grasps and human-robot interactions like handshaking. The skin did not impair the detectability of various objects but rather helped in holding them with more stability. We saw that the silicone allows to transfer the forces over the silicone to the sensors. Because custom-made sensors tend to dislocate with time, their sensitivity might become compromised in prolonged dynamic use. We used only 46 sensors. Therefore, the sensor density across the hand is not very high. It would be beneficial for object classifications to have a better spatial resolution. More sensors would help in localizing point contacts with objects on a smaller scale. The sensor nonlinear drift is relatively large but might stabilize after 5000 cycles of loading. Further calibration of the sensors is needed for prolonged grasping tasks.
-
-    Supplementing robotic hands with tactile intelligence embedded between robot and a soft skin can contribute to making the hands more natural. This additional proprioceptive dimension can, in the future, be used to get tactile feedback and help in robotic learning-based control schemes. For this, hardware- and software-based questions need to be solved. For example, how can we fixate sensors best to avoid their dislocation during interaction? What increases our readout sensitivity and which machine learning tools lead to the best interpretation of the tactile feedback the skins provide?
-
-
-    <h2 class="title">Open Source</h2>
-    We open source the stl- and 3mf-files for the <a href="https://github.com/srl-ethz/Sensorized-Soft-Skin/tree/main/skin%20molds">skin molds</a> on Github.
-
-    <h2 class="title">Aknowledgements</h2>
-    We are grateful for the ETH Zurich RobotX Research program funding and the SNSF Project grant \#200021\_215489.
-    We would like to thank Barnabas Gavin Cangan for supporting us with the measurement setup. We also want to thank Yves Haberthür for his work on the multi-material 3D printer.
-  
     <footer>
       <address>
           Soft Robotics Lab<br>
