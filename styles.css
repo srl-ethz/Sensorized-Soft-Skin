@@ -31,3 +31,25 @@ table th {
 table td {
     text-align: left; /* Align text inside table data cells to the left */
 }
+
+
+/* For tablets and smaller devices */
+@media (max-width: 1024px) {
+    .your-element {
+        padding: 50px;
+    }
+}
+
+/* For mobile phones */
+@media (max-width: 768px) {
+    .your-element {
+        padding: 30px;
+    }
+}
+
+/* For smaller mobile phones */
+@media (max-width: 480px) {
+    .your-element {
+        padding: 20px;
+    }
+}
