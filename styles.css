@@ -11,9 +11,9 @@ body {
 }
 
 table {
-    /* margin: 0 auto; /* Center the table horizontally */
-    /* max-width: 75%; /* Limit the maximum width of the table */
-    width: 100%; /* auto; /* Allow the table to adjust its width based on content */
+    margin: 0 auto; /* Center the table horizontally */
+    max-width: 80%; /* Limit the maximum width of the table */
+    width: auto; /* Allow the table to adjust its width based on content */
     border-collapse: collapse; /* Collapse table borders */
 }
 
