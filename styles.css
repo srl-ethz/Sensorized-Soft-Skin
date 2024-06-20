@@ -1,5 +1,33 @@
 body {
     margin: 0;
     background: white;
+    text-align: justify;
+}
+
+.title {
+    text-align: left;
+    color: RoyalBlue;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Styles for table headers and cells */
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: right;
+}
+
+/* Additional styles for table headers */
+th {
+    background-color: #f2f2f2;
     text-align: center;
+}
+
+/* Class for left-aligned cells */
+.left-align {
+    text-align: left;
 }
